@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "527929427619",
+    "project_id": "claruschat-c53e6",
+    "storage_bucket": "claruschat-c53e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527929427619:android:bb14793034449c8d09a116",
+        "android_client_info": {
+          "package_name": "com.claruschat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "527929427619-eb166ue5bh8o40o4snot809i9nqbehdf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPIdvBPUdQoFUXZp6PWnvxZTXVUiG-0iA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "527929427619-eb166ue5bh8o40o4snot809i9nqbehdf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
