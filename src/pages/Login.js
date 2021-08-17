@@ -4,11 +4,13 @@ import {
   Text,
   KeyboardAvoidingView,
   ScrollView,
+  Alert,
   Image,
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import {Input, Button} from '../components';
 import {authStyle} from './styles';
+import {resolveAuthError} from '../functions';
 const Login = props => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -16,7 +18,7 @@ const Login = props => {
     auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => alert('ok'))
-      .catch(() => alert('err'));
+      .catch(err => Alert.alert('CLARUSCHAT', resolveAuthError(err.code)));
   }
   return (
     <KeyboardAvoidingView style={{flex: 1, backgroundColor: '#cfd8dc'}}>
