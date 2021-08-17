@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -9,8 +9,15 @@ import {
 import auth from '@react-native-firebase/auth';
 import {Input, Button} from '../components';
 import {authStyle} from './styles';
-
 const Login = props => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  function login() {
+    auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(() => alert('ok'))
+      .catch(() => alert('err'));
+  }
   return (
     <KeyboardAvoidingView style={{flex: 1, backgroundColor: '#cfd8dc'}}>
       <ScrollView style={{flex: 1}}>
@@ -27,15 +34,17 @@ const Login = props => {
               placeholder: 'Type your Email..',
               keyboardType: 'email-address',
             }}
+            onType={value => setEmail(value)}
           />
           <Input
             inputProps={{
               placeholder: 'Enter your password',
               secureTextEntry: true,
             }}
+            onType={value => setPassword(value)}
           />
         </View>
-        <Button title="Sign In" />
+        <Button title="Sign In" onPress={() => login()} />
         <Button
           title="Sign Up"
           onPress={() => props.navigation.navigate('Sign')}
