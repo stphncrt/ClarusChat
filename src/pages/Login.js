@@ -14,11 +14,22 @@ import {resolveAuthError} from '../functions';
 const Login = props => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  function login() {
-    auth()
-      .signInWithEmailAndPassword(email, password)
-      .then(() => alert('ok'))
-      .catch(err => Alert.alert('CLARUSCHAT', resolveAuthError(err.code)));
+  async function login() {
+    // auth()
+    //   .signInWithEmailAndPassword(email, password)
+    //   .then(() => alert('ok'))
+    //   .catch(err => Alert.alert('CLARUSCHAT', resolveAuthError(err.code)));
+
+    try {
+      if (email === '' || password === '') {
+        Alert.alert('CLARUSCHAT', resolveAuthError('auth/null-value'));
+      } else {
+        await auth().signInWithEmailAndPassword(email, password);
+        props.navigation.navigate('TimeLine');
+      }
+    } catch (error) {
+      Alert.alert('CLARUSCHAT', resolveAuthError(error.code));
+    }
   }
   return (
     <KeyboardAvoidingView style={{flex: 1, backgroundColor: '#cfd8dc'}}>

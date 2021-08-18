@@ -1,16 +1,34 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
   KeyboardAvoidingView,
   ScrollView,
   Image,
+  Alert,
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import {Input, Button} from '../components';
 import {authStyle} from './styles';
 
 const Sign = props => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [passwordRepeat, setPasswordRepeat] = useState('');
+
+  async function signIn() {
+    if (password === passwordRepeat) {
+      try {
+        await auth().createUserWithEmailAndPassword(email, password);
+        props.navigation.goBack();
+      } catch (error) {
+        Alert.alert('CLARUSCHAT', 'An error occurred');
+        console.log(error.code);
+      }
+    } else {
+      Alert.alert('CLARUSCHAT', 'Passwords are not matched');
+    }
+  }
   return (
     <KeyboardAvoidingView style={{flex: 1, backgroundColor: '#cfd8dc'}}>
       <ScrollView style={{flex: 1}}>
@@ -27,21 +45,24 @@ const Sign = props => {
               placeholder: 'Type your Email..',
               keyboardType: 'email-address',
             }}
+            onType={value => setEmail(value)}
           />
           <Input
             inputProps={{
               placeholder: 'Enter your password',
               secureTextEntry: true,
             }}
+            onType={value => setPassword(value)}
           />
           <Input
             inputProps={{
               placeholder: 'Enter your password again',
               secureTextEntry: true,
             }}
+            onType={value => setPasswordRepeat(value)}
           />
         </View>
-        <Button title="Create Account" />
+        <Button title="Create Account" onPress={signIn} />
         <Button title="Cancel" onPress={props.navigation.goBack} noBorder />
       </ScrollView>
     </KeyboardAvoidingView>

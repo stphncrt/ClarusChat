@@ -11,7 +11,7 @@ const Router = () => {
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Sign" component={Sign} />
-        {/* <Stack.Screen name="TimeLine" component={TimeLine} /> */}
+        <Stack.Screen name="TimeLine" component={TimeLine} />
       </Stack.Navigator>
     </NavigationContainer>
   );
