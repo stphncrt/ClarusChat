@@ -62,7 +62,7 @@ export const postitem = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
   },
-  usename: {
+  username: {
     fontWeight: 'bold',
     color: 'white',
   },
