@@ -9,7 +9,7 @@ const TimeLine = () => {
   console.log(user);
   return (
     <View style={timelinePage.container}>
-      <Text>Timeline</Text>
+      <Header />
     </View>
   );
 };

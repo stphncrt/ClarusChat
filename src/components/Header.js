@@ -10,7 +10,12 @@ const Header = props => {
         <Text style={header.text}>#{props.title}</Text>
       </View>
       <View style={{justifyContent: 'center', flexDirection: 'row'}}>
-        <Icon name="hexagon-multiple" size={30} color="#69007f" />
+        <Icon
+          name="hexagon-multiple"
+          size={30}
+          color="#69007f"
+          onPress={props.onTopicModalSelect}
+        />
         <Icon name="login" size={30} color="#69007f" onPress={props.onLogOut} />
       </View>
     </View>
