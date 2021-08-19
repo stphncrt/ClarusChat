@@ -51,10 +51,11 @@ export const button_outline = StyleSheet.create({
   },
 });
 
-export const postitem = StyleSheet.create({
+export const postItem = StyleSheet.create({
   container: {
     marginVertical: 10,
     backgroundColor: 'white',
+    // position: 'relative',
   },
   headerContainer: {
     padding: 5,
@@ -67,7 +68,7 @@ export const postitem = StyleSheet.create({
     color: 'white',
   },
   bodyContainer: {
-    padding: '5',
+    padding: 5,
   },
   time: {
     color: 'white',

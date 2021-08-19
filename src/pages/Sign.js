@@ -22,8 +22,12 @@ const Sign = props => {
         await auth().createUserWithEmailAndPassword(email, password);
         props.navigation.goBack();
       } catch (error) {
-        Alert.alert('CLARUSCHAT', 'An error occurred');
-        console.log(error.code);
+        if (error.code === 'auth/email-already-in-use') {
+          Alert.alert('CLARUSCHAT', 'User existing. Try another one..');
+        } else {
+          Alert.alert('CLARUSCHAT', 'An error occurred');
+          console.log(error.code);
+        }
       }
     } else {
       Alert.alert('CLARUSCHAT', 'Passwords are not matched');
