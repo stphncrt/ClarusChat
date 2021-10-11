@@ -6,6 +6,9 @@ export function resolveAuthError(code) {
     case 'auth/user-not-found':
       return 'User not found';
 
+    case 'auth/null-value':
+      return 'Email or Password can not be empty';
+
     default:
       break;
   }

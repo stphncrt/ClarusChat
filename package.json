@@ -12,15 +12,24 @@
   "dependencies": {
     "@react-native-firebase/app": "^12.5.0",
     "@react-native-firebase/auth": "^12.5.0",
+<<<<<<< HEAD
     "@react-native-firebase/database": "^12.9.0",
+=======
+    "@react-native-firebase/database": "^12.6.1",
+>>>>>>> c387062369d43d305de4498d28a3b8f01e993c78
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/native-stack": "^6.0.5",
     "moment": "^2.29.1",
     "react": "17.0.1",
     "react-native": "0.64.2",
+<<<<<<< HEAD
     "react-native-modal": "^13.0.0",
+=======
+    "react-native-modal": "^12.1.0",
+>>>>>>> c387062369d43d305de4498d28a3b8f01e993c78
     "react-native-safe-area-context": "^3.3.0",
-    "react-native-screens": "^3.5.0"
+    "react-native-screens": "^3.5.0",
+    "react-native-vector-icons": "^8.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

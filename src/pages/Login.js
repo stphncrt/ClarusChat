@@ -15,12 +15,29 @@ const Login = props => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   async function login() {
+<<<<<<< HEAD
     try {
       await auth().signInWithEmailAndPassword(email, password);
       props.navigation.navigate('Timeline');
       Alert.alert('ok');
     } catch (error) {
       Alert.alert('Claruschat', resolveAuthError(error.code));
+=======
+    // auth()
+    //   .signInWithEmailAndPassword(email, password)
+    //   .then(() => alert('ok'))
+    //   .catch(err => Alert.alert('CLARUSCHAT', resolveAuthError(err.code)));
+
+    try {
+      if (email === '' || password === '') {
+        Alert.alert('CLARUSCHAT', resolveAuthError('auth/null-value'));
+      } else {
+        await auth().signInWithEmailAndPassword(email, password);
+        props.navigation.navigate('TimeLine');
+      }
+    } catch (error) {
+      Alert.alert('CLARUSCHAT', resolveAuthError(error.code));
+>>>>>>> c387062369d43d305de4498d28a3b8f01e993c78
     }
   }
   return (
